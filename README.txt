@@ -1,20 +1,13 @@
-* README.txt
- * 
- * Usage: MiaFuzzer www.url.com [PAYLOAD].txt blockedresponse,blockedresponse,[...]
- * www.url.com is the website you wish to fuzz. The url should have FUZZ somewhere within.
- * Example: www.url.com/FUZZ, or www.url.com/link.FUZZ, etc
- * 
- * [PAYLOAD].txt is the directory of the list of payloads, each separated by a new line.
- * Example: If your URL is www.url.com/FUZZ and your .txt file says:
- * index
- * test
- * 123
- * the URLs www.url.com/index, www.url.com/test, and www.url.com/123 will be tested.
- * The location is relative to the .class file.
- * 
- * blockedresponse,blockedresponse,[...] are the different HTTP responses you want to ignore.
- * Ones commonly useless are 404, 403, etc.
- * This argument is passed as 404,403,402 and you can add as many as needed.
- * 
- * Example arguments: 
- * java MiaFuzzer www.url.com/FUZZ.php special_payloads.txt 404,403,302,301
+MiaFuzzer is a script designed to 'fuzz' a website (bruteforce the file directory) made because I didn't particularily like the layout of other fuzzing programs.
+Simply sends requests (specified by a text file) to a website to test the response it gives.
+Example: www.google.ca would be a 200 response but www.google.ca/404 would be a 404 response.
+USAGES
+java MiaFuzzer sitetofuzz payload blockedresponses
+or
+java MiaFuzzer sitetofuzz payload
+Pseudo: www.site.domain/FUZZ payload.txt xxx,xxx,[...]
+Pseudo: site.domain/index.FUZZ payload.txt -1
+Pseudo: protocol://www.site.domain/FUZZ/index.html xxx
+Example: google.com/search?q=FUZZ searchlist.txt -1
+Example: https://talkingelectronics.com/FUZZ.html list.txt 404,403
+Example: 192.168.2.1
