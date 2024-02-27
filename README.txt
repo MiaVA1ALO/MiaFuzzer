@@ -9,9 +9,13 @@ or
 java MiaFuzzer sitetofuzz payload
 
 Pseudo: www.site.domain/FUZZ payload.txt xxx,xxx,[...]
-Pseudo: site.domain/index.FUZZ payload.txt -1
+Pseudo: site.domain/index.FUZZ payload.txt
 Pseudo: protocol://www.site.domain/FUZZ/index.html xxx
 
-Example: google.com/search?q=FUZZ searchlist.txt -1
+Example: google.com/search?q=FUZZ searchlist.txt
 Example: https://talkingelectronics.com/FUZZ.html list.txt 404,403
-Example: 192.168.2.1
+etc
+
+_________________________________________________________________________________________________________________________________________
+
+The args can either be 2 or 3 statements. 
